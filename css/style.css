@@ -1,0 +1,41 @@
+*{
+    font-family: Inter,sans-serif;
+}
+
+button{
+    font-weight: 600 !important;
+}
+
+.siyah{
+    background-color: #000 !important;
+}
+
+.buttons-cerceve{
+    border-radius: 7px !important;
+}
+
+.yesil-cerceve {
+    border: 1px solid #2cb34f !important;
+    color: #2cb34f !important;
+}
+
+.giris-gorsel{
+    background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg);
+    background-repeat: no-repeat;
+    height: 768px !important;
+    background-size: 100% 100% !important;
+}
+
+@media only screen and (max-width:1024px) {
+    .giris-gorsel{
+        height: 768px;
+        background-repeat: no-repeat;
+    }
+}
+
+@media only screen and (max-width:1920px) {
+    .giris-gorsel{
+        height: 1080px;
+        
+    }
+}
