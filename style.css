@@ -1,0 +1,11 @@
+*{
+    font-family: Inter,sans-serif;
+}
+
+.ustmenu{
+    padding-top: 3% !important;
+}
+
+.ustmenu li{
+    padding: 0 2% !important;
+}
