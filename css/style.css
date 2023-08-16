@@ -1,8 +1,9 @@
 *{
     font-family: Inter,sans-serif;
+    letter-spacing: 1px !important;
 }
 
-button{
+lets-start-button{
     font-weight: 600 !important;
 }
 
@@ -11,7 +12,9 @@ button{
 }
 
 .buttons-cerceve{
-    border-radius: 7px !important;
+    border-radius: 8px !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
 }
 
 .yesil-cerceve {
@@ -19,8 +22,18 @@ button{
     color: #2cb34f !important;
 }
 
+.login-btn:hover{
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.signin-btn:hover{
+    background-color: #2cb34f !important;
+    color: #fff !important;
+}
+
 .giris-gorsel{
-    background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg);
+    background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg) !important;
     background-repeat: no-repeat;
     height: 768px !important;
     background-size: 100% 100% !important;
@@ -39,3 +52,168 @@ button{
         
     }
 }
+
+.icerik{
+    padding-top: 3% !important;
+}
+
+.icerik img{
+    width: 600px !important;
+    margin-left: 15%;
+}
+
+.icerik h2{
+    color: #000 !important;
+    font-size: 3.5rem !important;
+    font-weight: 600 !important;
+}
+
+.icerik p{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.icerik a{
+    font-size: 1rem !important;
+    font-weight: 600;
+    border-color: #33ffcc;
+}
+
+.icerik a:hover{
+    background-color: #33ffcc;
+    border-color: #33ffcc;
+    color: white;
+}
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.baslik-icerik{
+    height: 100vh !important;
+    padding-top: 10% !important;
+    margin-left: 8% !important;
+}
+
+.baslik-icerik h1,h2{
+    font-weight: 900 !important;
+    font-size: 5rem !important;
+    color: white !important;
+}
+
+.baslik-icerik p{
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+    margin-top: 4% !important;
+    color: white !important;
+}
+
+
+/* Giriş Butonu */
+
+.lets-start-button{
+    
+    display: inline-block;
+    margin: 5% auto;
+    
+    -webkit-border-radius: 10px;
+    
+    -webkit-box-shadow: 
+        0px 3px rgba(128,128,128,1), /* gradient effects */
+        0px 4px rgba(118,118,118,1),
+        0px 5px rgba(108,108,108,1),
+        0px 6px rgba(98,98,98,1),
+        0px 7px rgba(88,88,88,1),
+        0px 8px rgba(78,78,78,1),
+        0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+    
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    opacity: 0.95;
+}
+
+.lets-start-button span{
+    background-color: #E8E8E8;
+    
+    background-image: 
+        /* gloss gradient */
+        -webkit-gradient(
+            linear, 
+            left bottom, 
+            left top, 
+            color-stop(50%,rgba(255,255,255,0)), 
+            color-stop(50%,rgba(255,255,255,0.3)), 
+            color-stop(100%,rgba(255,255,255,0.2))),
+        
+        /* dark outside gradient */
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(210,210,210,0.3)), 
+            color-stop(20%,rgba(210,210,210,0)), 
+            color-stop(80%,rgba(210,210,210,0)), 
+            color-stop(100%,rgba(210,210,210,0.3))),
+        
+        /* light inner gradient */
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(20%,rgba(255,255,255,0.5)), 
+            color-stop(80%,rgba(255,255,255,0.5)), 
+            color-stop(100%,rgba(255,255,255,0))),        
+        
+        /* diagonal line pattern */
+        -webkit-gradient(
+            linear, 
+            0% 100%, 
+            100% 0%, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(40%,rgba(255,255,255,0)), 
+            color-stop(40%,#D2D2D1), 
+            color-stop(60%,#D2D2D1), 
+            color-stop(60%,rgba(255,255,255,0)), 
+            color-stop(100%,rgba(255,255,255,0)));
+    
+        -webkit-box-shadow:
+            0px -1px #fff, /* top highlight */
+            0px 1px 1px #FFFFFF; /* bottom edge */
+    
+    -webkit-background-size: 100%, 100%, 100%, 4px 4px;
+    
+    -webkit-border-radius: 10px;
+    -webkit-transition: -webkit-transform .1s ease-in-out;
+    
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    
+    color: #3A474D;
+    font-weight: 600;
+    font-size: 2rem;
+    
+    text-shadow: 0px 1px #fff, 0px -1px #262F33;
+}
+
+.lets-start-button span:hover{
+    color: green;
+    text-shadow: 0px -1px lawngreen;
+    cursor: pointer;
+}
+
+.lets-start-button:active{
+    -webkit-box-shadow: 
+    0px 4px rgba(118,118,118,1),
+    0px 3px rgba(128,128,128,1),
+    0px 6px rgba(98,98,98,1),
+    0px 5px rgba(108,108,108,1),
+    0px 8px rgba(78,78,78,1),
+    0px 7px rgba(88,88,88,1),
+    0px 10px 2px 0px rgba(128,128,128,.6);
+}
+
+.lets-start-button:active span{
+    -webkit-transform: translate(0, 5px);
+}
+
