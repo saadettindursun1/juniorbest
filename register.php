@@ -1,6 +1,7 @@
 <?php
-require_once("functions/jb-encrypt.php");
-require_once("functions/jb-mysql.php");
+session_start();
+
+require_once("class-loader.php");
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +62,7 @@ require_once("functions/jb-mysql.php");
 
                     <div class="form-group">
                         <label for="password">Parola</label>
-                        <input type="password" name="mail" class="form-control" id="password"
+                        <input type="password" name="password" class="form-control" id="password"
                             aria-describedby="password-warning" placeholder="Parolanızı Giriniz">
                         <small id="password-warning" class="form-text text-muted">Uygun parola girmediniz</small>
                     </div>
@@ -69,57 +70,81 @@ require_once("functions/jb-mysql.php");
 
                 </div>
                 <div class="card-footer bg-white">
-                    <button type="button" name="user-register" id="user-register" class="btn btn-dark btn-block">Kayıt
-                        Ol</button>
+                    <input value="Kayıt Ol" name="user-register" id="user-register"
+                        class="btn btn-lg btn-dark btn-block" readonly>
                 </div>
+                <?php
+
+
+                @$btn = $_POST["user-register"]; //button basıldımı bilgisini alıyorum 
+                
+                if (isset($btn)) {  // button tıklandı ise 
+
+                    $first_name = $_POST["first-name"];
+                    $last_name = $_POST["last-name"];
+                    $mail = $_POST["mail"];
+                    $password = $_POST["password"];
+
+                  
+                    $jb_mysql = new jbMysql();
+                    $jb_send_mail = new jbMailer();
+                    $encrypt = new jbEncrypt();
+
+                    $table = "users";
+                    $value_name = "user_first_name, user_last_name , user_mail, user_password, user_login_type, user_info, user_register_date, user_veritification, user_veritification_code, user_veritification_validity,user_veritification_try,user_nickname,user_deleted";
+                    $user_info = array(
+                        "null" => "null"
+                    );
+
+
+                    //echo $first_name.$last_name.$mail.$password;
+
+
+                    //doğrulama kodu oluşturma
+                    $veritification_code =  rand(100000, 999999);
+
+                    $json_user_info = json_encode($user_info);
+                    $data = array(
+                        "user_first_name" => $first_name,
+                        "user_last_name" => $last_name,
+                        "user_mail" => $encrypt->code_encrypt($mail),
+                        "user_password" => $encrypt->code_encrypt($password),
+                        "user_login_type" => "0",
+                        "user_info" => $json_user_info,
+                        "user_register_date" => date("Y-m-d"),
+                        "user_veritification" => "1",
+                        "user_veritification_code" => $veritification_code,
+                        "user_veritification_valididity" => date("Y-m-d g:i:s"),
+                        "user_veritification_try" =>  "3",
+                        "user_nickname" => "nickname",
+                        "user_deleted" => "0"
+                    );
+
+                    // $ekle = $jb_mysql->insert($table,$value_name,$value,$data);
+                     $ekle = $jb_mysql->insert($table,$value_name,$data);
+
+                     if($ekle){
+
+                        $content = "<p>JuniorBest platformunda kayıt işlemini bitirmeniz için doğrulama kodunuz: <br> <strong>".$veritification_code."</strong></p>";
+
+                        $jb_send_mail->sendMail($first_name,"saadettin.dursun1@gmail.com",$content,"Doğrulama Kodu");
+                        echo "Kaydınız oluşturulmuştur.";
+                        $_SESSION["loginType"]=2;
+
+                        $_SESSION["mail"]= $mail;
+                        header("Refresh:2;Url=dogrulama.php");
+
+                     }
+                }
+                ?>
+
             </form>
         </div>
 
 
     </div>
 
-    <?php
-$encrypt = new jbEncrypt();
-$jb_mysql = new jbMysql();
 
-$table = "users";
-$value_name = "user_first_name, user_last_name , user_mail, user_password, user_login_type, user_info, user_register_date, user_veritification, user_veritification_code, user_veritification_validity,user_nickname,user_deleted";
-$user_info = array(
-    "genel bilgiler" => array(
-        "bilgi1"=>"deneme",
-        "bilgi2"=>"deneme",
-        "bilgi3"=>"deneme",
-    ),
-    "ozel bilgiler" => array(
-            "bilgi1"=>"deneme",
-            "bilgi2"=>"deneme",
-            "bilgi3"=>"deneme",
-    )
-);
-
-
-$json_user_info = json_encode($user_info);
-$data = array(
-    "user_first_name" => "Metincan",
-    "user_last_name" => "Çakmak",
-    "user_mail" => "rexlerpanz@gmail.com",
-    "user_password" => "Metincan",
-    "user_login_type" => "1",
-    "user_info" => $json_user_info,
-    "user_register_date" => "2023-08-01",
-    "user_veritification" => "1",
-    "user_veritification_code" => "123456",
-    "user_veritification_valididity" => "2023-08-16 12:14:44",
-    "user_nickname" => "Metincan",
-    "user_deleted" => "1"
-);
-
-// $ekle = $jb_mysql->insert($table,$value_name,$value,$data);
- //$ekle = $jb_mysql->insert($table,$value_name,$data);
-
- //echo $ekle;
-
-?>
 </body>
 
 </html>
