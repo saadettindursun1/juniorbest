@@ -3,6 +3,9 @@
     letter-spacing: 1px !important;
 }
 
+
+
+
 lets-start-button{
     font-weight: 600 !important;
 }
@@ -27,16 +30,34 @@ lets-start-button{
     color: #000 !important;
 }
 
+.signin-btn{
+    background-color: rgb(220, 251, 110) !important;
+    color:black !important;
+    font-weight: 500 !important;
+    border-radius: 28px !important;
+}
+.login-btn{
+    color:black !important;
+    font-weight: 500 !important;
+    border-radius: 28px !important;
+}
+
 .signin-btn:hover{
     background-color: #2cb34f !important;
     color: #fff !important;
 }
 
-.giris-gorsel{
-    background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg) !important;
-    background-repeat: no-repeat;
-    height: 768px !important;
-    background-size: 100% 100% !important;
+nav {
+    background: linear-gradient(to right, #351250, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom-right-radius: 75px;;
+    border-bottom-left-radius: 75px;;
+}
+body{
+    /*background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg) !important;*/
+    background: #093028;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #351250, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 @media only screen and (max-width:1024px) {
