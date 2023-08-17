@@ -15,6 +15,7 @@
         include("header.php");
         ?>
     </div>
+
     <div class="row mt-5 icerik container-fluid">
         <div class="card col-md-6 border-0 ">
             <div class="card-body text-center">
@@ -30,11 +31,14 @@ ve gerçek projelerde yer alma fırsatı sunar.</p>
         </div>
         <div class="col-md-6">
             <img src="img/home-banner.png" class="icerik-img" alt="Responsive image">
-        </div>
-
-      
+        </div>      
     </div>
 
+    <div>
+        <?php
+            include("faq.php");
+        ?>
+    </div>
 </body>
 
 </html>
