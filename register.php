@@ -112,7 +112,7 @@ require_once("class-loader.php");
                         "user_login_type" => "0",
                         "user_info" => $json_user_info,
                         "user_register_date" => date("Y-m-d"),
-                        "user_veritification" => "1",
+                        "user_veritification" => "0",
                         "user_veritification_code" => $veritification_code,
                         "user_veritification_valididity" => date("Y-m-d g:i:s"),
                         "user_veritification_try" =>  "3",

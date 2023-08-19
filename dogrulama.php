@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION["loginType"] != 2) {
-   // header("Location:register.php");
+   header("Location:register.php");
 }
 require_once("class-loader.php");
 ?>
@@ -68,6 +68,13 @@ input {
          $get_code = $get_code .  $_POST["code-" . $i];
      }
      if($get_code == $code["user_veritification_code"]) {
+        $table = "users";
+        $re_query = "user_veritification='1'";
+        $re_where = "user_mail = '".$code_mail."'";
+        header("Refresh:0;Url=bilgiler.php");
+     
+         $jb_mysql->update($table,$re_query,$re_where);
+
          echo "doğrulama başarılı";
      }
      if($get_code != $code["user_veritification_code"]) {
