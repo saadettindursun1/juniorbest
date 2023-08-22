@@ -69,7 +69,7 @@ input {
      }
      if($get_code == $code["user_veritification_code"]) {
         $table = "users";
-        $re_query = "user_veritification='1'";
+        $re_query = "user_veritification='1' ,user_login_type='1'";
         $re_where = "user_mail = '".$code_mail."'";
         header("Refresh:0;Url=bilgiler.php");
      

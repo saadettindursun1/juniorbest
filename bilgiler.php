@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$asama =  $_SESSION["asama"];;
+$asama =  2;
 ?>
 <!DOCTYPE html>
 <html lang="en">
