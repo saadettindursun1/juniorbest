@@ -28,7 +28,7 @@ if (isset($_POST["desc-button"])) {
     $tag_query = "user_info='" . $json_data_update . "' , user_login_type='2'";
     $tag_where = "user_mail='" . $code_mail . "'";
     $jb_mysql->update("users", $tag_query, $tag_where);
-    header("Refresh:0;Url=anasayfa.php"); 
+    header("Refresh:0;Url=anasayfa.php");
 }
         ?>
     </div>
