@@ -3,6 +3,10 @@
     letter-spacing: 1px !important;
 }
 
+body{
+    margin: 0 px !important;
+}
+
 
 
 
@@ -237,4 +241,3 @@ body{
 .lets-start-button:active span{
     -webkit-transform: translate(0, 5px);
 }
-

@@ -15,7 +15,7 @@ class jbMysql {
     return $conn;
 }
 
-function update($table, $query, $where){
+ function update($table, $query, $where){
 //kisi_adi = 'Yusuf Sefa', kisi_soyadi = 'SEZER'
   $conn = $this->connectMysql();
   $sonuc = $conn->exec("UPDATE ".$table." SET ".$query." WHERE ".$where."");
@@ -43,10 +43,7 @@ function row_count($table,$query){
 
   return $count;
 } 
-
-
-  
-
+ 
 
 
 function insert($table,$value_name,$data){

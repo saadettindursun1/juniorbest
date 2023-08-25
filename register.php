@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 require_once("class-loader.php");
 ?>
 
@@ -13,6 +14,7 @@ require_once("class-loader.php");
     <title>Document</title>
 
     <link rel="stylesheet" href="mincss/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/juniorbest.js"></script>
 </head>
@@ -24,7 +26,7 @@ require_once("class-loader.php");
 }
 </style>
 
-<body style="background: linear-gradient(248.22deg,#1E8075 -2.64%,#00473F 93.03%);">
+<body>
     <div class="row mt-5">
 
         <div class="col-md-7 text-center">
@@ -93,7 +95,24 @@ require_once("class-loader.php");
                     $table = "users";
                     $value_name = "user_first_name, user_last_name , user_mail, user_password, user_login_type, user_info, user_register_date, user_veritification, user_veritification_code, user_veritification_validity,user_veritification_try,user_nickname,user_deleted";
                     $user_info = array(
-                        "null" => "null"
+                        "user_info" => array(
+                            "birthday" => "",
+                            "phone" => "",
+                            "city" => "",
+                            "town" => "",
+                            "photo" => ""
+                        ),
+                        "status" => array(
+                          "job" => "",
+                          "education" =>"" 
+                        ),
+                        "bio"   => array(
+                            "desc" => "",
+                            "short_desc" =>"",
+                            "cv" => "" 
+                        ),
+                        "tag" => "",
+                        "asama" => "1"
                     );
 
 

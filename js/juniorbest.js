@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+
+  
   $("#user-register").on("click", function () {
     infoCheck();
   });
@@ -6,6 +8,57 @@ jQuery(document).ready(function ($) {
   $("#nickname").on("input", function () {
     nicknameCheck();
   });
+
+  $("#create-nickname").on("click", function () {
+    updateNickname();
+  });
+
+
+  $("#create-info").on("click", function () {
+    updateInfo();
+  });
+
+
+
+  function updateNickname(){
+    var nickname = $("#nickname").val();
+    if(nickname.length>2){
+    var url = "check_nickname.php";
+    // JQuery kütüphanesini kullanarak AJAX isteği yap
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {
+        nickname: nickname,
+      },
+      success: function (data) {
+        if (data == true) {
+          var form = document.getElementById("update-nickname-form");
+          form.submit();
+
+        }
+        if (data == false) {
+          $("#nickname-warning").html("Bu kullanıcı adı alınmış.");
+          $("#nickname-warning").css("color", "red");
+          $("#create-nickname").prop("disabled", true);
+
+
+        }
+      },
+    });
+  }
+
+  else{
+    $("#nickname-warning").html("Seçeceğiniz nickname özel/türkçe karakter içermemelidir.");
+    $("#nickname-warning").css("color", "black");
+    $("#create-nickname").prop("disabled", true);
+
+  }
+  }
+
+ 
+
+
   function nicknameCheck(){
     var nickname = $("#nickname").val();
     if(nickname.length>2){
@@ -21,14 +74,23 @@ jQuery(document).ready(function ($) {
         if (data == true) {
           $("#nickname-warning").html("Bu kullanıcı adı kullanılabilir.");
           $("#nickname-warning").css("color", "green");
+          $("#create-nickname").prop("disabled", false);
         }
         if (data == false) {
           $("#nickname-warning").html("Bu kullanıcı adı alınmış.");
           $("#nickname-warning").css("color", "red");
+          $("#create-nickname").prop("disabled", true);
+
 
         }
       },
     });
+  }
+
+  else{
+    $("#nickname-warning").html("Seçeceğiniz nickname özel/türkçe karakter içermemelidir.");
+    $("#nickname-warning").css("color", "black");
+    $("#create-nickname").prop("disabled", true);
   }
   }
 
@@ -140,3 +202,4 @@ $(document).ready(function () {
     return false;
   });
 });
+
