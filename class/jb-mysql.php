@@ -30,9 +30,29 @@ function list($select,$table, $query){
   $sql = "SELECT ".$select." FROM ".$table." where ".$query."";
  
   $data = $conn->query($sql);
-  return $data->fetch(PDO::FETCH_ASSOC);
+ return $data->fetch(PDO::FETCH_ASSOC);
+
+ 
+
 
 }
+
+
+function list_all($select,$table){
+  $conn = $this->connectMysql();
+  $sql = "SELECT ".$select." FROM ".$table."";
+ 
+  $data = $conn->query($sql);
+
+  $results = array();
+  while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+  }
+  
+  return $results;
+
+}
+
 
 
 function row_count($table,$query){

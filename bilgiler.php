@@ -24,6 +24,7 @@ $asama =    $data->asama;
     <title>Document</title>
 
     <link rel="stylesheet" href="mincss/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/juniorbest.js"></script>
 </head>
