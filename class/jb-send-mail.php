@@ -9,7 +9,6 @@ require 'vendor/phpmailer/phpmailer/src/SMTP.php';
     
     class jbMailer{
 
-
         function sendMail($name,$user_mail,$content,$content_subject){
     $mail = new PHPMailer(true);
 
@@ -41,7 +40,6 @@ require 'vendor/phpmailer/phpmailer/src/SMTP.php';
         $mail->isHTML(true);
         $mail->Subject = $content_subject;
         $mail->Body = $content;
-
         $mail->send();
      //   echo $user_mail." mail adresine mesajınız iletildi. ";
     } catch (Exception $e) {

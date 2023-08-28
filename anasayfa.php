@@ -1,1 +1,1 @@
- 
+ aşamalar bitti

@@ -1,6 +1,23 @@
 <?php 
+ob_start();
 session_start();
+<<<<<<< HEAD
 $asama =  2;
+=======
+require_once("class-loader.php");
+
+$jb_mysql = new jbMysql();
+$jb_send_mail = new jbMailer();
+$jb_encrypt = new jbEncrypt();
+$jb_uploads = new jbUploads();
+
+$mail = $_SESSION["mail"];
+$code_mail = $jb_encrypt->code_encrypt($mail);
+
+$json_data =  $jb_mysql->list("user_info","users","user_mail='".$code_mail."'");
+$data = json_decode($json_data["user_info"]);
+$asama =    $data->asama;
+>>>>>>> cd32e1103c879785ff5be3c105285f38d9a52711
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +28,7 @@ $asama =  2;
     <title>Document</title>
 
     <link rel="stylesheet" href="mincss/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/juniorbest.js"></script>
 </head>
@@ -122,7 +140,7 @@ body {
                     <p class="h6 mt-3 mb-1">Adım - 2 </p>
                 </div>
             </div>
-            <div class="timeline-step">
+            <div class="timeline-step <?php if($asama==3){echo "active-step";} ?>">
                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
                     data-content="And here's some amazing content. It's very engaging. Right?"
                     data-original-title="2005">
@@ -130,7 +148,7 @@ body {
                     <p class="h6 mt-3 mb-1">Adım - 3 </p>
                 </div>
             </div>
-            <div class="timeline-step">
+            <div class="timeline-step <?php if($asama==4){echo "active-step";} ?>">
                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
                     data-content="And here's some amazing content. It's very engaging. Right?"
                     data-original-title="2010">
@@ -138,11 +156,21 @@ body {
                     <p class="h6 mt-3 mb-1">Adım - 4 </p>
                 </div>
             </div>
+
+            <div class="timeline-step <?php if($asama==5){echo "active-step";} ?>">
+                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
+                    data-content="And here's some amazing content. It's very engaging. Right?"
+                    data-original-title="2010">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">Adım - 5 </p>
+                </div>
+            </div>
         </div>
 
 
         <?php
             include("asamalar/adim-".$asama.".php");
+
              ?>
 
 

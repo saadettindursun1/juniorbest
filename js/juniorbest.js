@@ -1,4 +1,65 @@
 jQuery(document).ready(function ($) {
+
+
+  $('#get-tags-button').click(function() {
+    var tagValues = [];
+    $('.selected-tags a').each(function() {
+        tagValues.push($(this).text());
+    });
+    
+    var tagValuesString = tagValues.join(','); // Virgülle ayrılmış string haline getir
+    
+    $('#tag-values').val(tagValuesString); // Hidden inputun değerine ata
+
+    var form = document.getElementById("tag-form");
+    form.submit();
+});
+
+
+    // Üst seviye <div> öğesine click olayı dinleyicisi ekle
+    $('.selected-tags').on('click', 'a', function() {
+      var id = $(this).attr('id');
+      var tagName = $(this).attr('class');
+      console.log("Tıklanan <a> etiketinin id'si: " + tagName);
+      $("#" + tagName).css("display", "inline-block");
+
+      $(this).remove();
+
+  });
+
+
+  var labels = $('label');
+
+  // Her bir label için tıklama olayını dinleyin
+  labels.click(function () {
+    // Labelın id'sini alın
+    var id = $(this).attr('id');
+
+      var tag = $("#" + id).html();
+
+
+
+      // Sonuçları konsola yazdırın (istediğiniz işlemi yapabilirsiniz)
+
+
+      console.log(tag);
+      var link = $('<a>', {
+        text: tag,
+        id:"select-"+id,
+        class:id,    // Link metni
+        href: '#'   // Hedef URL
+    });
+    $("#" + id).addClass("label-active");
+    $("#" + id).css("display", "none");
+    // <a> etiketini <div> içine ekle
+    $('#selected-tags').append(link);
+
+
+    // "tag-" kısmını kaldırarak sadece numarayı alın
+
+  });
+
+
   $("#user-register").on("click", function () {
     infoCheck();
   });
@@ -6,30 +67,91 @@ jQuery(document).ready(function ($) {
   $("#nickname").on("input", function () {
     nicknameCheck();
   });
-  function nicknameCheck(){
-    var nickname = $("#nickname").val();
-    if(nickname.length>2){
-    var url = "check_nickname.php";
-    // JQuery kütüphanesini kullanarak AJAX isteği yap
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: {
-        nickname: nickname,
-      },
-      success: function (data) {
-        if (data == true) {
-          $("#nickname-warning").html("Bu kullanıcı adı kullanılabilir.");
-          $("#nickname-warning").css("color", "green");
-        }
-        if (data == false) {
-          $("#nickname-warning").html("Bu kullanıcı adı alınmış.");
-          $("#nickname-warning").css("color", "red");
 
-        }
-      },
-    });
+  $("#create-nickname").on("click", function () {
+    updateNickname();
+  });
+
+
+  $("#create-info").on("click", function () {
+    updateInfo();
+  });
+
+
+
+
+  function updateNickname() {
+    var nickname = $("#nickname").val();
+    if (nickname.length > 2) {
+      var url = "check_nickname.php";
+      // JQuery kütüphanesini kullanarak AJAX isteği yap
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: {
+          nickname: nickname,
+        },
+        success: function (data) {
+          if (data == true) {
+            var form = document.getElementById("update-nickname-form");
+            form.submit();
+
+          }
+          if (data == false) {
+            $("#nickname-warning").html("Bu kullanıcı adı alınmış.");
+            $("#nickname-warning").css("color", "red");
+            $("#create-nickname").prop("disabled", true);
+
+
+          }
+        },
+      });
+    }
+
+    else {
+      $("#nickname-warning").html("Seçeceğiniz nickname özel/türkçe karakter içermemelidir.");
+      $("#nickname-warning").css("color", "black");
+      $("#create-nickname").prop("disabled", true);
+
+    }
   }
+
+
+
+
+  function nicknameCheck() {
+    var nickname = $("#nickname").val();
+    if (nickname.length > 2) {
+      var url = "check_nickname.php";
+      // JQuery kütüphanesini kullanarak AJAX isteği yap
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: {
+          nickname: nickname,
+        },
+        success: function (data) {
+          if (data == true) {
+            $("#nickname-warning").html("Bu kullanıcı adı kullanılabilir.");
+            $("#nickname-warning").css("color", "green");
+            $("#create-nickname").prop("disabled", false);
+          }
+          if (data == false) {
+            $("#nickname-warning").html("Bu kullanıcı adı alınmış.");
+            $("#nickname-warning").css("color", "red");
+            $("#create-nickname").prop("disabled", true);
+
+
+          }
+        },
+      });
+    }
+
+    else {
+      $("#nickname-warning").html("Seçeceğiniz nickname özel/türkçe karakter içermemelidir.");
+      $("#nickname-warning").css("color", "black");
+      $("#create-nickname").prop("disabled", true);
+    }
   }
 
   function mailControl(mail, callback) {
@@ -140,3 +262,4 @@ $(document).ready(function () {
     return false;
   });
 });
+

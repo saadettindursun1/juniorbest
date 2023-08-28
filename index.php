@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="anasayfa">
     <?php
         include("header.php");
         ?>

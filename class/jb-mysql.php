@@ -15,7 +15,7 @@ class jbMysql {
     return $conn;
 }
 
-function update($table, $query, $where){
+ function update($table, $query, $where){
 //kisi_adi = 'Yusuf Sefa', kisi_soyadi = 'SEZER'
   $conn = $this->connectMysql();
   $sonuc = $conn->exec("UPDATE ".$table." SET ".$query." WHERE ".$where."");
@@ -30,9 +30,29 @@ function list($select,$table, $query){
   $sql = "SELECT ".$select." FROM ".$table." where ".$query."";
  
   $data = $conn->query($sql);
-  return $data->fetch(PDO::FETCH_ASSOC);
+ return $data->fetch(PDO::FETCH_ASSOC);
+
+ 
+
 
 }
+
+
+function list_all($select,$table){
+  $conn = $this->connectMysql();
+  $sql = "SELECT ".$select." FROM ".$table."";
+ 
+  $data = $conn->query($sql);
+
+  $results = array();
+  while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+  }
+  
+  return $results;
+
+}
+
 
 
 function row_count($table,$query){
@@ -43,10 +63,7 @@ function row_count($table,$query){
 
   return $count;
 } 
-
-
-  
-
+ 
 
 
 function insert($table,$value_name,$data){
