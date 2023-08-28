@@ -1,9 +1,7 @@
 <?php 
 ob_start();
 session_start();
-<<<<<<< HEAD
 $asama =  2;
-=======
 require_once("class-loader.php");
 
 $jb_mysql = new jbMysql();
@@ -17,7 +15,6 @@ $code_mail = $jb_encrypt->code_encrypt($mail);
 $json_data =  $jb_mysql->list("user_info","users","user_mail='".$code_mail."'");
 $data = json_decode($json_data["user_info"]);
 $asama =    $data->asama;
->>>>>>> cd32e1103c879785ff5be3c105285f38d9a52711
 ?>
 <!DOCTYPE html>
 <html lang="en">
