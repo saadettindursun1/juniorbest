@@ -12,8 +12,8 @@
 
 <body class="anasayfa">
     <?php
-        include("header.php");
-        ?>
+    include("header.php");
+    ?>
     <div class="row">
         <div class="baslik-icerik col-md-5">
             <h1>Haydi</h1>
@@ -52,7 +52,7 @@
 
     <div class="" style="background-color:#351250;">
         <?php
-            include("faq.php");
+        include("faq.php");
         ?>
     </div>
 
@@ -63,14 +63,15 @@
         <div class="card col-md-6 border-0 ">
             <div class="card-body text-center">
                 <h2 class="card-title mb-5 mt-5">Amacımız</h2>
-                <p class="card-text mb-5 mt-5 text-left ml-5">JuniorBest'in temel amacı, genç yeteneklerin iş dünyasına ilk
-adımlarını atmalarına ve deneyim kazanmalarına yardımcı olmaktır.
-Tecrübesizlik veya iş deneyimi olmaması, bir projede yer almak için
-bir engel olmamalıdır. Gruplar halinde çalışarak, herkes kendi ilgi ve
-yetenek alanında uzmanlaşabilir ve gerçek projelere katkı sağlayabilir.</p>
+                <p class="card-text mb-5 mt-5 text-left ml-5">JuniorBest'in temel amacı, genç yeteneklerin iş dünyasına
+                    ilk
+                    adımlarını atmalarına ve deneyim kazanmalarına yardımcı olmaktır.
+                    Tecrübesizlik veya iş deneyimi olmaması, bir projede yer almak için
+                    bir engel olmamalıdır. Gruplar halinde çalışarak, herkes kendi ilgi ve
+                    yetenek alanında uzmanlaşabilir ve gerçek projelere katkı sağlayabilir.</p>
                 <a href="#" class="btn btn-outline-dark baslayalim-btn text-center p-3 pr-5 pl-5">Devamını Oku</a>
             </div>
-        </div>        
+        </div>
     </div>
 
     <div class="jb-footer mt-5">
@@ -84,15 +85,15 @@ yetenek alanında uzmanlaşabilir ve gerçek projelere katkı sağlayabilir.</p>
                     <ul>
                         <li><a href="#">Hakkımızda</a></li>
                         <li><a href="#">Biz Kimiz</a></li>
-                        <li><a href="#">Ne Yapıyoruz</a></li>                        
+                        <li><a href="#">Ne Yapıyoruz</a></li>
                         <li><a href="#">İletişim</a></li>
                         <li><a href="#">Gizlilik Politikası</a></li>
                     </ul>
                 </div>
                 <div class="col jb-footer-social-media">
-                    <h4 class="ml-5">Sosyal Medya</h4>                    
+                    <h4 class="ml-5">Sosyal Medya</h4>
                     <a href="#" target="_blank"><i class="fa-brands fa-square-instagram" style="color: white;"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-square-twitter" style="color: white;"></i></a>                    
+                    <a href="#" target="_blank"><i class="fa-brands fa-square-twitter" style="color: white;"></i></a>
                 </div>
             </div>
         </div>

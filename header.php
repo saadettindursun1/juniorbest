@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top bg-transparent bg-body-tertiary pt-2">
+<nav class="navbar anasayfa sticky-top bg-transparent bg-body-tertiary pt-2">
     <div class="container-fluid pl-5 pr-5">
         <a class="navbar-brand"><img style="height: 100px; width: auto;" src="img/junior-best-logo-light.png"
                 alt=""></a>

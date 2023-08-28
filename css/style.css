@@ -51,7 +51,7 @@ lets-start-button{
     color: #fff !important;
 }
 
-nav {
+nav.anasayfa {
     background: linear-gradient(to right, #351250, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-bottom-right-radius: 75px;;
     border-bottom-left-radius: 75px;;
@@ -308,7 +308,7 @@ body{
     transform: scale(1.5) rotate(360deg) !important;
 }
 
-=======
+
 .tag-label{
     color:blue;
 }
@@ -339,4 +339,43 @@ body{
     top: 0;
     right: 0;
     color: red; /* Çarpı işareti rengi */
+}
+
+.jb-left-menu {
+    width: 14%;
+    padding-left:0px !important;
+     background-color:#f0f2f5;
+     display: flex !important;
+     flex-direction: column !important;
+     flex-wrap: wrap !important;
+     text-align: center;
+}
+
+.jb-left-menu a{
+    margin-top: 15px !important;
+}
+
+.jb-purple{
+    background-color: #351250 !important;
+}
+
+.profil-img{
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 100%;
+}
+
+.jb-panel-navbar{
+
+    background-color: red !important;
+    display: flex   !important;
+    vertical-align:middle !important;
+
+    align-items: center !important;
+
+}
+nav.jb-panel-navbar ul{
+    vertical-align:middle !important;
+
+    text-align: center !important;
 }
