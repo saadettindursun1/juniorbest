@@ -3,8 +3,6 @@
     letter-spacing: 1px !important;
 }
 
-<<<<<<< HEAD
-=======
 body{
     margin: 0 px !important;
 }
@@ -12,7 +10,6 @@ body{
 
 
 
->>>>>>> cd32e1103c879785ff5be3c105285f38d9a52711
 lets-start-button{
     font-weight: 600 !important;
 }
@@ -59,14 +56,12 @@ nav {
     border-bottom-right-radius: 75px;;
     border-bottom-left-radius: 75px;;
 }
-<<<<<<< HEAD
 
 body{
     /* background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg) !important; */
-=======
-body.anasayfa{
+}
+    body.anasayfa{
     /*background-image: url(https://uploads-ssl.webflow.com/606adb499a08b6316654ea98/606aeb1005ece01fbde36c44_Mask-Group.jpg) !important;*/
->>>>>>> cd32e1103c879785ff5be3c105285f38d9a52711
     background: #093028;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #351250, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -250,7 +245,6 @@ body.anasayfa{
     -webkit-transform: translate(0, 5px);
 }
 
-<<<<<<< HEAD
 .jb-footer{
     /* background-color: black !important; */
     background: #093028;  /* fallback for old browsers */
@@ -346,4 +340,3 @@ body.anasayfa{
     right: 0;
     color: red; /* Çarpı işareti rengi */
 }
->>>>>>> cd32e1103c879785ff5be3c105285f38d9a52711
