@@ -7,7 +7,7 @@
         <div class="card-body">
             <input type="text" id="nickname" name="nickname" class="form-control" maxlength="25">
             <small id="nickname-warning" class="form-text text-left">Seçeceğiniz nickname özel karakter
-                içermemelidir.</small>
+                içermemelidir. </small>
         </div>
         <div class="card-footer">
             <button type="submit" id="create-nickname" name="create-nickname"
