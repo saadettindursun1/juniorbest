@@ -261,5 +261,32 @@ $(document).ready(function () {
     }
     return false;
   });
-});
 
+
+
+     // Şehir dropdown değiştiğinde
+     $('#info-city').on('change', function() {
+      var cityID = $(this).val();
+      if (cityID) {
+          $.ajax({
+              type: 'POST',
+              url: 'get_town.php', // İlçe verilerini getirecek olan PHP dosyasının yolu
+              data: {city_id: cityID},
+              success: function(response) {
+                var ilceSelect = $('#info-town');
+                ilceSelect.empty(); // Önce mevcut seçenekleri temizleyin
+                $.each(JSON.parse(response), function(index, town) {
+                    ilceSelect.append($('<option>', {
+                        value: town.id,
+                        text: town.town
+                    }));
+                });              }
+          });
+      } else {
+          $('#info-town').html('<option value="">İlçe Seçin</option>');
+      }
+  });
+
+
+
+});

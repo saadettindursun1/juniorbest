@@ -1,11 +1,11 @@
 <form method="POST">
-    <div class="container-fluid mt-5  align-items-center justify-content-center">
+    <div class="card container-fluid mt-5  align-items-center justify-content-center">
         <div class="form-group">
             <label class="text-left">Kısa Açıklama</label>
             <input type="text" class="form-control" name="short-desc" id="">
         </div>
         <div class="form-group">
-            <label class="text-left">Biografi</label>
+            <label class="text-left">Biografi</label><br>
             <textarea name="desc" class="form-control" id="" cols="30" rows="5"></textarea>
         </div>
 

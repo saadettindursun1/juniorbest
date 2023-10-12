@@ -1,35 +1,48 @@
 <form method="POST" id="update-info-form" enctype="multipart/form-data">
     <div class="container-fluid mt-5 col-md-6 align-items-center justify-content-center">
         <div class="card ">
-            <div class="card-header ">
+            <div class="card-header baslik">
                 Genel Bilgi Formu </div>
             <div class="card-body">
                 <div class="form-group">
                     <label for="info-birthday" class="text-left">* Doğum Tarihi</label>
-                    <input type="date" name="info-birthday" class="form-control" id="info-birthday" required>
+                    <input type="date" name="info-birthday" class="form-control" id="info-birthday" style="padding-right:5px;" required>
                 </div>
                 <div class="form-group">
                     <label for="info-phone" class="text-left">Telefon</label>
                     <input type="number" name="info-phone" class="form-control" id="info-phone" placeholder="Telefon">
                 </div>
+                <?php
+                ?>
                 <div class="form-group">
                     <label for="info-city" class="text-left">* Şehir</label>
-                    <input type="text" name="info-city" class="form-control" id="info-city" placeholder="Şehir"
-                        required>
+                    <select name="info-city" class="form-control" id="info-city" id="">
+                        <option value="">Şehir Seçiniz</option>
+
+                        <?php
+                        $city = $jb_mysql->list_all("*", "city");
+                        foreach ($city as $c) {
+                        ?>
+
+                            <option value="<?php echo $c["id"]; ?>"><?php echo $c["city"]; ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="info-town" class="text-left">* İlçe</label>
-                    <input type="text" name="info-town" class="form-control" id="info-town" placeholder="İlçe" required>
+                    <select name="info-town" class="form-control" id="info-town">
+                        <option value="">İlçe Seçiniz</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="info-photo" class="text-left">Fotoğraf</label>
-                    <input type="file" name="info-photo" accept="image/*">
+                    <input type="file" name="info-photo" id="info-photo" accept="image/*">
+
                 </div>
             </div>
             <div class="card-footer">
-                <input type="submit" value="Kaydet" name="create-info" id="create-info"
-                    class="btn btn-lg btn-dark btn-block" readonly>
+                <input type="submit" value="Kaydet" name="create-info" id="create-info" class="btn btn-lg btn-dark btn-block" readonly>
 
                 <?php
                 if (isset($_POST["create-info"])) {
@@ -50,7 +63,7 @@
                     $uploadDir = "uploads/"; // Yüklenen fotoğrafların saklanacağı dizin
 
                     if ($_FILES["info-photo"]["name"] != "") {
-                       
+
                         $upload = $jb_uploads->uploads($_FILES);
 
                         $data->user_info->photo = $upload;
