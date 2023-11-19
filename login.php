@@ -71,7 +71,7 @@ require_once("class-loader.php");
                         $jb_mysql = new jbMysql();
                         $query = "(user_mail = '" . $code_user_name . "' OR user_nickname ='" . $user_name . "') AND (user_password = '" . $code_user_password . "')";
 
-                        $select = "user_mail,user_login_type,user_nickname,user_deleted";
+                        $select = "user_id,user_mail,user_login_type,user_nickname,user_deleted";
                         $get_user = $jb_mysql->list($select, "users", $query);
 
 
@@ -81,11 +81,13 @@ require_once("class-loader.php");
                             } else { //Giriş Yapıldıysa
 
                                 session_destroy();
+                                session_start();
+
                                 $_SESSION["user_mail"] = $jb_encrpyt->decode_encrypt($get_user["user_mail"]);
                                 $_SESSION["user_login_type"] = $get_user["user_login_type"];
+                                $_SESSION["user_id"] = $get_user["user_id"];
                                 $_SESSION["user_nickname"] = $get_user["user_nickname"];
                                 $jb_redirect = new userRedirect();
-
                                 $jb_redirect->redirect($get_user["user_login_type"]);
                             }
                         }

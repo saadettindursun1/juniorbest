@@ -32,7 +32,7 @@
             </div>
 
 
-            <p>
+            <p style="margin-top: 240px !important;">
                 JuniorBest, kendini geliştirmek isteyip ekip bulamayan veya ekip kurmak <br> isteyenler içindir.
                 JuniorBest tamamen <strong class="text-underline">ücretsiz</strong> bir platformdur.
             </p>
