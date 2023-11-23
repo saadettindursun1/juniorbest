@@ -10,7 +10,8 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Kaydet" name="desc-button" id="desc-button" class="btn btn-block btn-dark" readonly>
+            <input type="submit" value="Kaydet" name="desc-button" id="desc-button" class="btn btn-block btn-dark"
+                readonly>
         </div>
 
         <?php

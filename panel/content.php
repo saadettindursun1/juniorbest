@@ -70,7 +70,8 @@
     </div>
 
     <?php
-    $posts = $jb_mysql->list_all("*", "post");
+    $order_by = " order by post_id desc";
+    $posts = $jb_mysql->list_all("*", "post", $order_by);
     foreach ($posts as $post) {
 
         $get_post_photo = json_decode($post["post_photos"]);

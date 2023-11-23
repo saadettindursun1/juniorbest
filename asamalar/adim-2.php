@@ -20,7 +20,7 @@
                         <option value="">Şehir Seçiniz</option>
 
                         <?php
-                        $city = $jb_mysql->list_all("*", "city");
+                        $city = $jb_mysql->list_all("*", "city", "");
                         foreach ($city as $c) {
                         ?>
 
@@ -64,7 +64,7 @@
 
                     if ($_FILES["info-photo"]["name"] != "") {
 
-                        $upload = $jb_uploads->uploads($_FILES);
+                        $upload = $jb_uploads->uploads($_FILES, "info-photo", "uploads/");
 
                         $data->user_info->photo = $upload;
                     }

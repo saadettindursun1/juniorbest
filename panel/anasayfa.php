@@ -21,35 +21,7 @@ $jb_uploads = new jbUploads();
 </head>
 
 <body>
-    <div class="top-menu">
-        <div class="top-menu-left">
-            <img src="../img/junior-best-logo-dark.png">
-            <!-- arama kutusu yapılacak! -->
-        </div>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Ara...">
-            <button class="search-button">Arama</button>
-        </div>
-        <div class="top-menu-right">
-
-            <div class="ustmenu-icons">
-                <img class="top-icons" src="../img/baglantilar.png" alt="">
-
-            </div>
-            <div class="ustmenu-icons">
-                <img class="top-icons" src="../img/messages.png" alt="">
-
-            </div>
-            <div class="ustmenu-icons" style="margin-right: 35px;">
-                <img class="top-icons" src="../img/bildirim.png" alt="">
-
-            </div>
-            <div class="top-menu-profil">
-                <a href="#"><img src="../img/metincan-pp.jpg"></a>
-            </div>
-        </div>
-
-    </div>
+    <?php include("topmenu.php"); ?>
 
     <div class="container">
         <div class="left-menu">

@@ -4,11 +4,11 @@
 
         <div class=" table-warning text-center d-flex justify-content-lg-between">
             <?php
-            $tags = $jb_mysql->list_all("*", "tags");
+            $tags = $jb_mysql->list_all("*", "tags", "");
             foreach ($tags as $tag) {
             ?>
 
-            <label class="tag-label" id="tag-<?php echo $tag["tag_id"]; ?>"><?php echo $tag["tag_name"]; ?></label>
+                <label class="tag-label" id="tag-<?php echo $tag["tag_id"]; ?>"><?php echo $tag["tag_name"]; ?></label>
 
             <?php } ?>
         </div>

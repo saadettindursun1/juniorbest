@@ -51,10 +51,10 @@ class jbMysql
     return $results;
   }
 
-  function list_all($select, $table)
+  function list_all($select, $table, $order_by)
   {
     $conn = $this->connectMysql();
-    $sql = "SELECT " . $select . " FROM " . $table . " order by post_id desc";
+    $sql = "SELECT " . $select . " FROM " . $table . " " . $order_by . "";
 
     $data = $conn->query($sql);
 
