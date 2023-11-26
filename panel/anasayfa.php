@@ -20,22 +20,12 @@ $jb_uploads = new jbUploads();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
-<body>
+<div>
     <?php include("topmenu.php"); ?>
-
     <div class="container">
-        <div class="left-menu">
-            <div class="left-bar-icons"> <img src="../img/home.png"> <a href="#" class="left-menu-profil">Anasayfa</a>
-            </div>
-            <div class="left-bar-icons"> <img src="../img/project.png"> <a href="#" class="left-menu-profil">Projeler</a></div>
-            <div class="left-bar-icons"> <img src="../img/notification.png"> <a href="#" class="left-menu-profil">Duyurular</a>
-            </div>
-            <div class="left-bar-icons"> <img src="../img/vote.png"> <a href="#" class="left-menu-profil">Oylama</a>
-            </div>
-            <div class="left-bar-icons"> <img src="../img/destek.png"> <a href="#" class="left-menu-profil">Destek</a>
-            </div>
 
-        </div>
+        <?php include("left-menu.php"); ?>
+
 
 
 
@@ -43,6 +33,8 @@ $jb_uploads = new jbUploads();
         include("content.php");
         ?>
     </div>
+
+</div>
 </body>
 
 </html>

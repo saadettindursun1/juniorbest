@@ -556,3 +556,35 @@ background-color: #31a24c;
 .follow-accept button:hover {
 cursor: pointer;
 }
+
+.proje-box{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+
+}
+
+.proje-box a{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    height: 120px !important;
+    width: 150px !important;
+    padding: 12px;
+    
+    border: 1px solid black;
+    border-radius: 15px;
+
+}
+.proje-box span img {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 45px;
+}
+
+.help-box {
+    color: white !important;
+    background-color: #3498db;
+}
