@@ -292,68 +292,77 @@ p {
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-
-  
+}
 
 
-  .top-content-box {
+
+
+.top-content-box {
     display: flex;
     flex-direction: column;
     padding-top: 1%;
     padding-left: 30%;
     max-width: 100vh;
     overflow: auto;
-  }
+}
 
-  #myBtn {
+#myBtn {
     padding: 10px;
     margin-bottom: 10px;
     max-width: 40vh;
-  }
+}
 
-  .modal-content p{
+.modal-content p {
     text-align: center;
     font-size: 22px !important;
     font-weight: 500;
-  }
+}
 
-.form-group { 
+.form-group {
     width: 80% !important;
     display: flex !important;
     flex-direction: column;
@@ -364,15 +373,15 @@ p {
 
 .form-group textarea {
     font-size: 18px;
-padding: 10px;
+    padding: 10px;
     width: 100%;
 }
 
 .form-group select {
     width: 50%;
     font-size: 18px;
-padding: 10px;
-text-align: left;
+    padding: 10px;
+    text-align: left;
 }
 
 #info-photo {
@@ -383,114 +392,167 @@ text-align: left;
     border-radius: 5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
-  }
+}
 
-  .form-group button {
+.form-group button {
     font-size: 18px;
     padding: 10px 15px;
     color: #000;
     background-color: #ffffff;
     border: 1 px solid #000;
     border-radius: 10px;
-  }
-  .form-group button:hover {
+}
+
+.form-group button:hover {
     cursor: pointer;
     color: #ffffff;
     background-color: #000;
     border: 1 px solid #f0f0f0;
-  }
+}
 
 
-  .profil-top-container{
+.profil-top-container {
     padding-top: 5%;
-  }
+}
 
-  .profil-bg{
+.profil-bg {
     width: 100% !important;
-  }
+}
 
-  .profile-info {
+.profile-info {
     display: flex;
     flex-direction: row;
     gap: 30px;
-  }
+}
 
-  .profile-info h2{
+.profile-info h2 {
     font-size: 28px;
     font-weight: 300;
     margin-top: 20px;
-  }
-  .profil-user{
+}
+
+.profil-user {
     width: 250px;
     height: 250px;
     border-radius: 100px;
     margin-left: 150px;
     margin-top: -80px;
     object-fit: cover;
-  }
+}
 
-  .my-post {
+.my-post {
     margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 35px;
-    margin-left:5%;
+    margin-left: 5%;
     margin-right: 5%;
-  }
+}
 
-  .my-post h1 {
-    font-size  : 28px;
+.my-post h1 {
+    font-size: 28px;
     font-weight: 300;
     text-align: center;
     text-decoration: underline;
     text-underline-offset: 8px;
 
 
-  }
+}
 
-  .network-content{
+.network {
     padding-top: 8%;
     margin-left: 10%;
-  }
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+}
 
- .user-row{
+.network-content {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.my-network {
+    width: 25%;
+}
+
+.waiting-network{
+width: 35%;
+margin-left: 5%;
+
+    
+}
+
+
+.user-row {
     display: flex;
     flex-direction: row;
     padding: 30px 30px 15px 0px;
 
- }
+}
 
 
- .user-row-info {
-    margin-top:10px;
+.user-row-info {
+    margin-top: 10px;
     margin-left: 10px;
     width: 250px;
- }
- .nickname{
+}
+
+.nickname {
     margin-top: -100px;
     font-size: 12px;
- }
+}
 
- .user-row-image img {
+.user-row-image img {
     width: 50px;
     height: 50px;
     border-radius: 30px;
     object-fit: cover;
- }
+}
 
- .add-btn{
-    margin-top:10px;
-    margin-left: 10px;
+.add-btn {
+    margin-top: 10px;
     padding: 10px 30px;
     background-color: #001B79;
     color: white;
     font-size: 14px;
     border-radius: 215px;
- }
+    width: 200px;
+}
 
- .add-btn:hover{
+.add-btn:hover {
     cursor: pointer;
-    color: #001B79;
-    background-color: white;
+
     font-size: 16px;
- }
+}
+
+.follow-accept{
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.accept-btn {
+background-color: #31a24c;
+
+}
+
+
+.decline-btn {
+ background-color: #bd5464;
+}
+
+.follow-accept button { 
+    color: white;
+
+    border: 1px solid white;
+    font-size: 16px;
+    height: 30px;
+    padding: 5px 25px;
+    border-radius:30px;
+}
+.follow-accept button:hover {
+cursor: pointer;
+}

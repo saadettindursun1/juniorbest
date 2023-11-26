@@ -105,4 +105,18 @@ class jbMysql
 
     $conn = null;
   }
+
+
+  function delete($table, $query)
+  {
+
+    try {
+      $conn = $this->connectMysql();
+      $sql = "DELETE FROM " . $table .  " WHERE " . $query;
+      $conn->exec($sql);
+      return true;
+    } catch (PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
+  }
 }
