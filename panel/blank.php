@@ -22,12 +22,14 @@ $jb_uploads = new jbUploads();
 
 <body>
     <?php include("topmenu.php"); ?>
+    <div class="container">
 
-    <?php include("left-menu.php"); ?>
+        <?php include("left-menu.php"); ?>
+        <div class="content-box ">
 
 
 
-
+        </div>
     </div>
 </body>
 

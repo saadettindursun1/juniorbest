@@ -371,7 +371,8 @@ p {
     gap: 10px;
 }
 
-.form-group textarea {
+.form-group textarea,
+.form-group input {
     font-size: 18px;
     padding: 10px;
     width: 100%;
@@ -401,6 +402,13 @@ p {
     background-color: #ffffff;
     border: 1 px solid #000;
     border-radius: 10px;
+}
+
+.form-group h1 {
+    text-align: center !important;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 400;
 }
 
 .form-group button:hover {
@@ -476,11 +484,11 @@ p {
     width: 25%;
 }
 
-.waiting-network{
-width: 35%;
-margin-left: 5%;
+.waiting-network {
+    width: 35%;
+    margin-left: 5%;
 
-    
+
 }
 
 
@@ -526,8 +534,8 @@ margin-left: 5%;
     font-size: 16px;
 }
 
-.follow-accept{
-    margin-top:10px;
+.follow-accept {
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -535,36 +543,37 @@ margin-left: 5%;
 }
 
 .accept-btn {
-background-color: #31a24c;
+    background-color: #31a24c;
 
 }
 
 
 .decline-btn {
- background-color: #bd5464;
+    background-color: #bd5464;
 }
 
-.follow-accept button { 
+.follow-accept button {
     color: white;
 
     border: 1px solid white;
     font-size: 16px;
     height: 30px;
     padding: 5px 25px;
-    border-radius:30px;
-}
-.follow-accept button:hover {
-cursor: pointer;
+    border-radius: 30px;
 }
 
-.proje-box{
+.follow-accept button:hover {
+    cursor: pointer;
+}
+
+.proje-box {
     display: flex;
     flex-direction: row !important;
     justify-content: space-between;
 
 }
 
-.proje-box a{
+.proje-box a {
     color: black;
     display: flex;
     flex-direction: column;
@@ -573,11 +582,12 @@ cursor: pointer;
     height: 120px !important;
     width: 150px !important;
     padding: 12px;
-    
+
     border: 1px solid black;
     border-radius: 15px;
 
 }
+
 .proje-box span img {
     margin-bottom: 15px;
     margin-top: 10px;
@@ -587,4 +597,63 @@ cursor: pointer;
 .help-box {
     color: white !important;
     background-color: #3498db;
+}
+
+.success-alert {
+    display: block;
+    background-color: rgb(22, 242, 74);
+    color: #0e3c19;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.proje-view {
+    align-items: center;
+
+    width: 300px !important;
+    height: 350px !important;
+    padding: 25px;
+    border: 1px solid grey;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proje-view img {
+    width: 250px !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    object-fit: fill;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.project-name {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.project-type {
+
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.project-desc {
+    margin-top: 10px;
+}
+
+.projects{
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 50px;
+
+    padding-top: 1%;
+    padding-left: 30%;
+
 }

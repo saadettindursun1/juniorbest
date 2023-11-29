@@ -20,7 +20,6 @@ class jbUploads
 
         // Fotoğrafı yüklemek için move_uploaded_file kullanılır
         if (move_uploaded_file($uploadedFile, $uploadPath)) {
-            echo "Fotoğraf başarıyla yüklendi: " . $uploadPath;
 
             return $uploadPath;
         } else {

@@ -30,13 +30,13 @@ $jb_uploads = new jbUploads();
 
         <div class="content-box proje-box">
 
-            <a href="">
+            <a href="projelerim.php">
                 <span>
                     <img src="../img/projects.png" alt="">
                 </span>
                 Projelerim
             </a>
-            <a href="">
+            <a href="projeler.php">
                 <span>
                     <img src="../img/search.png" alt="">
 
@@ -44,7 +44,7 @@ $jb_uploads = new jbUploads();
 
                 Proje Arama
             </a>
-            <a href="">
+            <a href="proje-olustur.php">
                 <span>
                     <img src="../img/add.png" alt="">
 
