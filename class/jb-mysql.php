@@ -98,7 +98,7 @@ class jbMysql
       $conn = $this->connectMysql();
       $sql = "INSERT INTO " . $table . " (" . $value_name . ") VALUES (" . $complete_join_data . ")";
       $conn->exec($sql);
-      return true;
+      return $conn;
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }

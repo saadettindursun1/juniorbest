@@ -38,7 +38,8 @@ $jb_uploads = new jbUploads();
                 <div class="proje-view">
 
                     <img src="<?php echo $project["project_photo"]; ?>" alt="">
-                    <span class="project-name"> <?php echo $project["project_name"]; ?></span>
+                    <a href="proje-detay.php?proje-id=<?php echo $project["project_id"]; ?>"> <span class="project-name">
+                            <?php echo $project["project_name"]; ?></span></a>
                     <span class="project-type"><?php echo $project["project_type"]; ?></span>
                     <span class="project-desc"><?php echo $project["project_description"]; ?></span>
                 </div>

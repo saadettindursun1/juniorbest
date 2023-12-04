@@ -64,7 +64,7 @@ $jb_uploads = new jbUploads();
                         if (isset($_POST["create-project"])) {
 
 
-                            $project_photo;
+                            $project_photo = "null";
                             if ($_FILES["project-photo"]["name"] != "") {
 
                                 $upload = $jb_uploads->uploads($_FILES, "project-photo", "../uploads/");
@@ -88,6 +88,17 @@ $jb_uploads = new jbUploads();
                             $table = "project";
                             $value_name = "project_name,project_builder,project_description,project_type,project_date,project_deleted,project_photo";
                             $ekle = $jb_mysql->insert($table, $value_name, $data);
+                            $insert_id = $ekle->lastInsertId();
+
+                            $members_value = "member_project_id,member_user_id,member_status,member_type,member_deleted";
+                            $members_data = array(
+                                "member_project_id" => $insert_id,
+                                "member_user_id" =>  $_SESSION["user_id"],
+                                "member_status" => "0",
+                                "member_type" => "builder",
+                                "member_deleted" => "0",
+                            );
+                            $uye_ekle =  $jb_mysql->insert("members", $members_value, $members_data);
                         ?>
                         <div class="success-alert">
                             Proje Oluşturuldu
